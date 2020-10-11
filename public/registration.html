@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="styles/loader.css">
+	<link rel='icon' href='images/pwa-192x192.ico'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	  <!-- Compiled and minified JavaScript -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link rel="stylesheet" href="styles/loader.css">
+	<title>Registration</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+	<div class="pageloader" id="stop">
+		<div class="sk-chase">
+		  <div class="sk-chase-dot"></div>
+		  <div class="sk-chase-dot"></div>
+		  <div class="sk-chase-dot"></div>
+		  <div class="sk-chase-dot"></div>
+		  <div class="sk-chase-dot"></div>
+		  <div class="sk-chase-dot"></div>
+		</div>
+	  </div>
+	  <nav class="navbar-fixed">
+            <div class="nav-wrapper">
+              <a href="index.html" class="brand-logo"><img src="images/pwa-192x192.png" height='60px' width='90px' alt="GST logo">GST System</a>
+            </div>
+          </nav>
+    <!-- start register -->
+    <div class="container" style="margin-top: 100px;">
+    <form action="">
+		<h2>Registration</h2>
+		<label for="Business Name">Business Name</label>
+	    <input type="text" name="Business Name" id="Business" style="color: #fff;">
+	    <label for="GSTIN">GSTIN</label>
+	    <input type="text" name="GSTIN" id="GSTIN" style="color: #fff;">
+		<label for="accno">Bank Account Number</label>
+	    <input type="text" name="accno" id="accno" style="color: #fff;">
+	    <label for="Aadhar Number">Aadhar Number</label>
+	    <input type="text" name="Aadhar Number" id="Aadhar" style="color: #fff;">
+	    <label for="Phone Number">Phone Number</label>
+		<input type="text" name="Phone Number" id="Phone" style="color: #fff;">
+		<label for="amount">Enter Balance</label>
+	    <input type="text" name="balance" id="balance" style="color: #fff;">
+	    <label for="Password">Password</label>
+	    <input type="password" name="Password" id="Password" style="color: #fff;">
+		<label for="Confirm Password">Confirm Password</label>
+		
+		<input type="password" name="Confirm Password" id="Confirm" style="color: #fff;">
+	    <input type="button" value="Register" style="background-color: #FFEF5E;" onclick="register()">
+     </form>
+     </div>
+     <!-- end register -->
+
+</body>
+</html>
