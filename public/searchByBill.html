@@ -8,6 +8,26 @@
 
 	  <!-- Compiled and minified JavaScript -->
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      window.onload = function(){
+        document.getElementById("stop").style.display="none";
+        window.ethereum.enable();
+        if(typeof web3!='undefined'){
+				web3=new Web3(web3.currentProvider);
+		}else{
+				web3=new Web3(new Web3.providers.HttpProvider("https://rpc-mumbai.matic.today"));
+		}
+		web3.eth.defaultAccount=web3.eth.accounts[0];
+		var gs = web3.eth.contract(ABI);
+    var todo = gs.at(address);
+    var result = todo.getBusinessDetails(localStorage.getItem("gstno"),(err,status)=>{
+      if(!err){
+        document.getElementById("Name").innerHTML = 'Welcome '+status[2];
+      }
+    });
+	
+    }
+</script>
 <link rel="stylesheet" href="styles/loader.css">
 	<title>Search by Bill Number</title>
 	<meta charset="utf-8">
@@ -112,5 +132,39 @@ p{
     </div>
     <br>
     <br>
+<script>
+  function printbill(){
+    bill = document.getElementById('bill').value;
+    if(typeof web3!='undefined'){
+				web3=new Web3(web3.currentProvider);
+		}else{
+				web3=new Web3(new Web3.providers.HttpProvider("https://rpc-mumbai.matic.today"));
+		}
+		web3.eth.defaultAccount=web3.eth.accounts[0];
+		var gs = web3.eth.contract(ABI);
+    var todo = gs.at(address);
+    gstno = localStorage.getItem("gstno");
+    status = todo.searchBill(bill,gstno,{gas:3000000},(err,result)=>{
+      if(!err){
+        if(result[0]=="")
+    {
+      M.toast({html: 'No such bill found', classes: 'rounded black'});
+    }
+    else{
+    document.getElementById('form1').style.display ='none';
+    document.getElementById('form2').style.display ='block';
+document.getElementById('billno').innerHTML = bill;
+document.getElementById('gstin').innerHTML = result[0];
+document.getElementById('aadhar').innerHTML = result[1];
+document.getElementById('name').innerHTML = result[2];
+document.getElementById('amount').innerHTML = result[3];
+document.getElementById('gst').innerHTML = result[4];
+    }
+      }
+    });
+    
+
+  }
+</script>
 </body>
 </html>
