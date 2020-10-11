@@ -55,7 +55,7 @@ This system works between government and business.
 
 ## Team Svastik
 - [Muskan Maheshwari](https://github.com/Muskan02)
-- [Priyanshu Agrwal](https://github.com/impriyanshu)
+- [Priyanshu Agarwal](https://github.com/impriyanshu)
 - [Priyanshu Arora](https://github.com/priyanshuarora1)
 - [Rajat Shrivastava](https://github.com/rajathandsom)
 
